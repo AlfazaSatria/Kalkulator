@@ -3,11 +3,15 @@ package com.example.kalkulator.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.kalkulator.R;
+import com.example.kalkulator.fragments.Feedback;
 import com.example.kalkulator.fragments.PersegiFragment;
 import com.example.kalkulator.fragments.PersegipanjangFragment;
 import com.example.kalkulator.fragments.SegitigaFragment;
@@ -61,4 +65,10 @@ public class MainActivity extends AppCompatActivity implements
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
+
+    public void handlerFeedback(View view) {
+        Intent intent = new Intent(this, Feedback.class);
+        startActivity(intent);
+    }
+
 }

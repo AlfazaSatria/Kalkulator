@@ -1,6 +1,7 @@
 package com.example.kalkulator.fragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -40,17 +41,19 @@ public class PersegiFragment extends Fragment {
         hasilPersegi = view.findViewById(R.id.tv_result_persegi);
         hitung_Persegi = view.findViewById(R.id.btn_calculate_persegi);
 
+
         hitung_Persegi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sisi = Double.valueOf(input_sisi.getText().toString());
                 hsk = (sisi * sisi);
                 hasilPersegi.setText(NumberFormat.getInstance().format(hsk));
-
             }
-
         });
         return view;
     }
+
+
+
 
 }
