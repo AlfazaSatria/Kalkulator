@@ -17,7 +17,7 @@
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#0000FF"
+        android:background="#00FFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/navigation"
         />
