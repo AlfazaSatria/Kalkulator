@@ -39,10 +39,10 @@ public class FeedbackResult extends Fragment {
 
         Bundle bundle = this.getArguments();
 
-        Feedback = bundle.getParcelable("feedback");
+        Feedback = bundle.getParcelable("FeedbackClass");
         textNama.setText(Feedback.getNama());
-        textUmur.setText(String.valueOf(Feedback.getUmur()));
         textFeedback.setText(String.valueOf(Feedback.getFeedback()));
+        textUmur.setText(String.valueOf(Feedback.getUmur()));
         return view;
     }
 

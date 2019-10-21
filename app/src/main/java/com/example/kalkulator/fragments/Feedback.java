@@ -44,19 +44,20 @@ public class Feedback extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        String nama = textNama.getText().toString();
+        String name = textNama.getText().toString();
         int umur = Integer.parseInt(textUmur.getText().toString());
         String isifeedback = textFeedback.getText().toString();
 
 
-        FeedbackClass feedback = new FeedbackClass(nama, isifeedback, umur);
+
+        FeedbackClass feedback = new FeedbackClass(isifeedback, name, umur);
         Bundle bundle = new Bundle();
-        bundle.putParcelable("Feedback", feedback);
+        bundle.putParcelable("FeedbackClass", feedback);
         Fragment Result = new FeedbackResult();
         Result.setArguments(bundle);
         FragmentTransaction fragmentTransaction = getActivity()
                 .getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.dynamic_fragment_placeholder, Result);
+        fragmentTransaction.replace(R.id.fragment_container, Result);
         fragmentTransaction.commit();
     }
 

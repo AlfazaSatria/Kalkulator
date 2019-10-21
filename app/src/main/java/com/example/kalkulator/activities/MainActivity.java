@@ -67,8 +67,11 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     public void handlerFeedback(View view) {
-        Intent intent = new Intent(this, Feedback.class);
-        startActivity(intent);
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        fragmentTransaction.replace(R.id.fragment_container,new Feedback());
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 
 }
